@@ -6,8 +6,6 @@
 #include <QVector>
 #include "ui_DateEditDialog.h"
 #include <QDate>
-
-
 class DateEditDialog : public QWidget
 {
 	Q_OBJECT
@@ -16,6 +14,8 @@ public:
 	DateEditDialog(QWidget *parent = Q_NULLPTR);
 	~DateEditDialog();
 	void setTime(QDateTime &datetime);
+
+	static QString g_DateFormat;
 
 signals:
 	void dateChanged(QDateTime &datetime);
