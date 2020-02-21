@@ -16,8 +16,12 @@ HDateTimeLineEdit::HDateTimeLineEdit(QWidget* parent /*= nullptr*/)
 }
 void HDateTimeLineEdit::showDateSelectDialogSlot()
 {
+	auto showPos = QCursor::pos();
 	m_pDateEditDialog->show();
-	m_pDateEditDialog->setGeometry(this->pos().x() - 5, this->pos().y() + 10, m_pDateEditDialog->width(), m_pDateEditDialog->height());
+	m_pDateEditDialog->setGeometry(showPos.x() - 5, showPos.y() + 10, m_pDateEditDialog->width(), m_pDateEditDialog->height());
+	
+	qDebug() << showPos;
+	
 }
 
 void HDateTimeLineEdit::setTimeEditSlot(QDateTime& datetime)

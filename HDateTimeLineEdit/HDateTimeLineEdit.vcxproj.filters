@@ -29,10 +29,10 @@
     <ClCompile Include="HDateTimeLineEdit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\HDateTimeEdit\DateEditDialog.cpp">
+    <ClCompile Include="moveFatherPushButton.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="moveFatherPushButton.cpp">
+    <ClCompile Include="DateEditDialog.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -50,18 +50,18 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="..\..\HDateTimeEdit\DateEditDialog.h">
+    <QtRcc Include="HDateTimeEdit.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="DateEditDialog.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="..\..\HDateTimeEdit\DateEditDialog.ui">
+    <QtUic Include="DateEditDialog.ui">
       <Filter>Form Files</Filter>
     </QtUic>
-  </ItemGroup>
-  <ItemGroup>
-    <QtRcc Include="HDateTimeEdit.qrc">
-      <Filter>Resource Files</Filter>
-    </QtRcc>
   </ItemGroup>
 </Project>

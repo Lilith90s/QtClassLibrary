@@ -90,21 +90,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\HDateTimeEdit\DateEditDialog.cpp" />
+    <ClCompile Include="DateEditDialog.cpp" />
     <ClCompile Include="HDateTimeLineEdit.cpp" />
     <ClCompile Include="moveFatherPushButton.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="DateEditDialog.h" />
     <ClInclude Include="moveFatherPushButton.h" />
-    <QtMoc Include="..\..\HDateTimeEdit\DateEditDialog.h" />
     <ClInclude Include="HDateTimeLineEdit.h" />
     <ClInclude Include="hdatetimelineedit_global.h" />
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="..\..\HDateTimeEdit\DateEditDialog.ui" />
+    <QtRcc Include="HDateTimeEdit.qrc" />
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="HDateTimeEdit.qrc" />
+    <QtUic Include="DateEditDialog.ui" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

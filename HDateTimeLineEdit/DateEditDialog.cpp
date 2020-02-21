@@ -18,11 +18,13 @@ DateEditDialog::DateEditDialog(QWidget *parent)
 		// this->setStyleSheet(qss.readAll());
 		qss.close();
 	}
+	this->setAttribute(Qt::WA_ShowModal, true);
 	this->setWindowOpacity(1);
 	this->setWindowFlags(Qt::CustomizeWindowHint | Qt::FramelessWindowHint | Qt::SubWindow);
 	// this->setWindowModality(Qt::ApplicationModal);
 	setAttribute(Qt::WA_TranslucentBackground, true);
 	this->hide();
+
 	connect(ui.closeBtn, &QPushButton::clicked, this, &DateEditDialog::hideDialogSlot);
 
 	connect(ui.nextMonthBtn, &QPushButton::clicked, this, [&] {
