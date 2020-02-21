@@ -1,25 +1,39 @@
-<UI version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>QtClassLibraryClass</class>
- <widget class="QWidget" name="QtClassLibraryClass" >
-  <property name="objectName" >
-   <string notr="true">QtClassLibraryClass</string>
-  </property>
-  <property name="geometry" >
+ <widget class="QWidget" name="QtClassLibraryClass">
+  <property name="geometry">
    <rect>
-	<x>0</x>
-	<y>0</y>
-	<width>600</width>
-	<height>400</height>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>400</height>
    </rect>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>QtClassLibrary</string>
   </property>
+  <widget class="HDateTimeLineEdit" name="lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>110</y>
+     <width>113</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
  </widget>
- <layoutDefault spacing="6" margin="11" />
- <pixmapfunction></pixmapfunction>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>HDateTimeLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>HDateTimeLineEdit.h</header>
+  </customwidget>
+ </customwidgets>
  <resources>
-   <include location="QtClassLibrary.qrc"/>
+  <include location="QtClassLibrary.qrc"/>
  </resources>
  <connections/>
-</UI>
+</ui>

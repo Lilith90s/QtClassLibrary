@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/HDateTimeEdit">
+        <file>Resources/Date.png</file>
+        <file>Resources/downArrow.png</file>
+    </qresource>
+</RCC>
