@@ -74,6 +74,11 @@
       <OutputFile>$(OutDir)\$(ProjectName).dll</OutputFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PostBuildEvent>
+      <Command>copy "..\x64\Debug\HDateTimeLineEdit.dll" ".\output\bin\"
+copy "..\x64\Debug\HDateTimeLineEdit.lib" ".\output\lib\"
+copy "./*.h" "./output/include/"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>

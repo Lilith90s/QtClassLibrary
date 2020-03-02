@@ -6,7 +6,7 @@
 #include <QString>
 #include <QMouseEvent>
 #include <QPainter>
-static QString g_DateFormat = "yyyy/MM/dd HH:mm:ss";
+QString DateEditDialog::g_DateFormat = "yyyy/MM/dd HH:mm:ss";
 DateEditDialog::DateEditDialog(QWidget *parent)
 	: QWidget(nullptr)
 {

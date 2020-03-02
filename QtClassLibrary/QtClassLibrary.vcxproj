@@ -30,7 +30,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
-    <IncludePath>E:\MyCode\QtClassLibrary\HDateTimeLineEdit\x64\HDateTimeEdit;E:\MyCode\QtClassLibrary\HDateTimeLineEdit;$(IncludePath)</IncludePath>
+    <IncludePath>E:\MyCode\QtClassLibrary\HDateTimeLineEdit\x64\Debug\uic;E:\MyCode\QtClassLibrary\HDateTimeLineEdit;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
