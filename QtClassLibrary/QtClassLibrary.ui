@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>QtClassLibraryClass</class>
  <widget class="QWidget" name="QtClassLibraryClass">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -36,6 +39,37 @@
     <string>输出</string>
    </property>
   </widget>
+  <widget class="HRetrievalCombox" name="comboBox">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>190</y>
+     <width>69</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>ArrowCursor</cursorShape>
+   </property>
+   <property name="editable">
+    <bool>false</bool>
+   </property>
+   <item>
+    <property name="text">
+     <string>hello</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>world</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>hi</string>
+    </property>
+   </item>
+  </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
@@ -43,6 +77,11 @@
    <class>HDateTimeLineEdit</class>
    <extends>QLineEdit</extends>
    <header>HDateTimeLineEdit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>HRetrievalCombox</class>
+   <extends>QComboBox</extends>
+   <header location="global">HRetrievalCombox.h</header>
   </customwidget>
  </customwidgets>
  <resources>
