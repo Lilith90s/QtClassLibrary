@@ -42,8 +42,8 @@
   <widget class="HRetrievalCombox" name="comboBox">
    <property name="geometry">
     <rect>
-     <x>130</x>
-     <y>190</y>
+     <x>70</x>
+     <y>30</y>
      <width>69</width>
      <height>22</height>
     </rect>
@@ -69,6 +69,19 @@
      <string>hi</string>
     </property>
    </item>
+  </widget>
+  <widget class="QPushButton" name="loadingButton">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>260</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>加载框</string>
+   </property>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

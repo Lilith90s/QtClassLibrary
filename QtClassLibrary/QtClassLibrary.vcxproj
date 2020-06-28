@@ -30,7 +30,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
-    <IncludePath>..\HDateTimeLineEdit\x64\Debug\uic;..\HDateTimeLineEdit;..\HRetrievalCombox;..\HRetrievalCombox\x64\Debug\uic;$(IncludePath)</IncludePath>
+    <IncludePath>..\LoadingWidget;..\LoadingWidget\x64\Debug\uic;..\HDateTimeLineEdit\x64\Debug\uic;..\HDateTimeLineEdit;..\HRetrievalCombox;..\HRetrievalCombox\x64\Debug\uic;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
@@ -51,11 +51,11 @@
     <Import Project="$(QtMsBuild)\qt_defaults.props" />
   </ImportGroup>
   <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <QtInstall>msvc2017_64</QtInstall>
+    <QtInstall>Qt5.9.1</QtInstall>
     <QtModules>core;gui;widgets</QtModules>
   </PropertyGroup>
   <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <QtInstall>msvc2017_64</QtInstall>
+    <QtInstall>Qt5.9.1</QtInstall>
     <QtModules>core;gui;widgets</QtModules>
   </PropertyGroup>
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')">
@@ -74,7 +74,7 @@
       <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>..\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>HDateTimeLineEdit.lib;HRetrievalCombox.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>HDateTimeLineEdit.lib;HRetrievalCombox.lib;LoadingWidget.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

@@ -5,6 +5,7 @@ VisualStudioVersion = 15.0.28307.960
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QtClassLibrary", "QtClassLibrary\QtClassLibrary.vcxproj", "{B12702AD-ABFB-343A-A199-8E24837244A3}"
 	ProjectSection(ProjectDependencies) = postProject
+		{FE3DB549-7911-41E8-85D2-35020F4AA2E5} = {FE3DB549-7911-41E8-85D2-35020F4AA2E5}
 		{4223936C-0579-464C-BFF0-B86E04864559} = {4223936C-0579-464C-BFF0-B86E04864559}
 		{DEE0809B-E3A0-4AF1-910C-CD7B5ABD9A91} = {DEE0809B-E3A0-4AF1-910C-CD7B5ABD9A91}
 	EndProjectSection
@@ -12,6 +13,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HDateTimeLineEdit", "HDateTimeLineEdit\HDateTimeLineEdit.vcxproj", "{4223936C-0579-464C-BFF0-B86E04864559}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HRetrievalCombox", "HRetrievalCombox\HRetrievalCombox.vcxproj", "{DEE0809B-E3A0-4AF1-910C-CD7B5ABD9A91}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LoadingWidget", "LoadingWidget\LoadingWidget.vcxproj", "{FE3DB549-7911-41E8-85D2-35020F4AA2E5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +34,10 @@ Global
 		{DEE0809B-E3A0-4AF1-910C-CD7B5ABD9A91}.Debug|x64.Build.0 = Debug|x64
 		{DEE0809B-E3A0-4AF1-910C-CD7B5ABD9A91}.Release|x64.ActiveCfg = Release|x64
 		{DEE0809B-E3A0-4AF1-910C-CD7B5ABD9A91}.Release|x64.Build.0 = Release|x64
+		{FE3DB549-7911-41E8-85D2-35020F4AA2E5}.Debug|x64.ActiveCfg = Debug|x64
+		{FE3DB549-7911-41E8-85D2-35020F4AA2E5}.Debug|x64.Build.0 = Debug|x64
+		{FE3DB549-7911-41E8-85D2-35020F4AA2E5}.Release|x64.ActiveCfg = Release|x64
+		{FE3DB549-7911-41E8-85D2-35020F4AA2E5}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
