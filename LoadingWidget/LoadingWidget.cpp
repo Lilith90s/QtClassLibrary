@@ -1,4 +1,4 @@
-#include "LoadingWidget.h"
+ï»¿#include "LoadingWidget.h"
 #include <QMovie>
 #include "MaskWidget.h"
 #include <QThread>
@@ -11,8 +11,7 @@ LoadingWidget::LoadingWidget(QWidget *parent)
 	ui.setupUi(this);
 	this->setWindowFlags(Qt::FramelessWindowHint| Qt::SubWindow);
 	setWindowModality(Qt::ApplicationModal);
-	setModal(true);
-	setAttribute(Qt::WA_TranslucentBackground);//±³¾°Í¸Ã÷
+	setAttribute(Qt::WA_TranslucentBackground);//èƒŒæ™¯é€æ˜Ž
 	movie = new QMovie(":/loading.gif");
 	movie->start();
 	ui.label->setMovie(movie);
@@ -49,16 +48,25 @@ void LoadingWidget::showEvent(QShowEvent *event)
 }
 
 
+
+void LoadingWidget::closeEvent(QCloseEvent* event)
+{
+	if (!m_closeable)
+	{
+		event->ignore();
+	}
+	else
+	{
+		QDialog::closeEvent(event);
+	}
+}
+
 void LoadingWidget::keyPressEvent(QKeyEvent* event)
 {
 	if ((event->modifiers() == Qt::ControlModifier) && (event->key() == Qt::Key_F1))
 	{
+		//m_closeable = true;
 		exit(0);
-	}
-	else
-	{
-		QDialog::keyPressEvent(event);
-	}
-
+	}	
 }
 

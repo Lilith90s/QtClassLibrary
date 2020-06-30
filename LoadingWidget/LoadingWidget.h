@@ -13,10 +13,13 @@ public:
 	
 protected:
 	void showEvent(QShowEvent *event);
+	void closeEvent(QCloseEvent* event) override;
 	void keyPressEvent(QKeyEvent* event) override;
 
 private:
 	Ui::LoadingDialog ui;
 	QMovie *movie;
 	MovieThread* movie_thread;
+
+	bool m_closeable = false;
 };

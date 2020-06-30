@@ -41,7 +41,36 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <TargetName>$(ProjectName)d</TargetName>
   </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <PostBuildEvent>
+      <Command>mkdir ".\x64\Debug\output"
+mkdir ".\x64\Debug\output\include"
+mkdir ".\x64\Debug\output\lib"
+mkdir ".\x64\Debug\output\bin"
+
+copy "*.h" ".\x64\Debug\output\include"
+copy ".\x64\Debug\uic\*.h" ".\x64\Debug\output\include"
+copy "..\x64\Debug\$(AssemblyName)d.dll" ".\x64\Debug\output\bin"
+copy "..\x64\Debug\$(AssemblyName)d.lib" ".\x64\Debug\output\lib"
+
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <PostBuildEvent>
+      <Command>mkdir ".\x64\Release\output"
+mkdir ".\x64\Release\output\include"
+mkdir ".\x64\Release\output\lib"
+mkdir ".\x64\Release\output\bin"
+
+copy "*.h" ".\x64\Release\output\include"
+copy ".\x64\Release\uic\*.h" ".\x64\Release\output\include"
+copy "..\x64\Release\$(AssemblyName).dll" ".\x64\Release\output\bin"
+copy "..\x64\Release\$(AssemblyName).lib" ".\x64\Release\output\lib"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')">
     <Import Project="$(QtMsBuild)\qt_defaults.props" />
   </ImportGroup>
