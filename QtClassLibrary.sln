@@ -7,6 +7,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QtClassLibrary", "QtClassLi
 	ProjectSection(ProjectDependencies) = postProject
 		{FE3DB549-7911-41E8-85D2-35020F4AA2E5} = {FE3DB549-7911-41E8-85D2-35020F4AA2E5}
 		{4223936C-0579-464C-BFF0-B86E04864559} = {4223936C-0579-464C-BFF0-B86E04864559}
+		{F6FD8980-4A57-4D6B-8375-DEAAD89F3D3A} = {F6FD8980-4A57-4D6B-8375-DEAAD89F3D3A}
 		{DEE0809B-E3A0-4AF1-910C-CD7B5ABD9A91} = {DEE0809B-E3A0-4AF1-910C-CD7B5ABD9A91}
 	EndProjectSection
 EndProject
@@ -15,6 +16,10 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HRetrievalCombox", "HRetrievalCombox\HRetrievalCombox.vcxproj", "{DEE0809B-E3A0-4AF1-910C-CD7B5ABD9A91}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LoadingWidget", "LoadingWidget\LoadingWidget.vcxproj", "{FE3DB549-7911-41E8-85D2-35020F4AA2E5}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GanntView", "GanntView\GanntView.vcxproj", "{FFED5769-0FA2-4FB6-AD3C-9D30B946B1A5}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MergeTable", "MergeTable\MergeTable.vcxproj", "{F6FD8980-4A57-4D6B-8375-DEAAD89F3D3A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,6 +43,14 @@ Global
 		{FE3DB549-7911-41E8-85D2-35020F4AA2E5}.Debug|x64.Build.0 = Debug|x64
 		{FE3DB549-7911-41E8-85D2-35020F4AA2E5}.Release|x64.ActiveCfg = Release|x64
 		{FE3DB549-7911-41E8-85D2-35020F4AA2E5}.Release|x64.Build.0 = Release|x64
+		{FFED5769-0FA2-4FB6-AD3C-9D30B946B1A5}.Debug|x64.ActiveCfg = Debug|x64
+		{FFED5769-0FA2-4FB6-AD3C-9D30B946B1A5}.Debug|x64.Build.0 = Debug|x64
+		{FFED5769-0FA2-4FB6-AD3C-9D30B946B1A5}.Release|x64.ActiveCfg = Release|x64
+		{FFED5769-0FA2-4FB6-AD3C-9D30B946B1A5}.Release|x64.Build.0 = Release|x64
+		{F6FD8980-4A57-4D6B-8375-DEAAD89F3D3A}.Debug|x64.ActiveCfg = Debug|x64
+		{F6FD8980-4A57-4D6B-8375-DEAAD89F3D3A}.Debug|x64.Build.0 = Debug|x64
+		{F6FD8980-4A57-4D6B-8375-DEAAD89F3D3A}.Release|x64.ActiveCfg = Release|x64
+		{F6FD8980-4A57-4D6B-8375-DEAAD89F3D3A}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

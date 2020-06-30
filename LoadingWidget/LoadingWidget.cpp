@@ -9,8 +9,9 @@ LoadingWidget::LoadingWidget(QWidget *parent)
 	: QDialog(parent)
 {
 	ui.setupUi(this);
-	this->setWindowFlags(Qt::FramelessWindowHint|Qt::SubWindow);
+	this->setWindowFlags(Qt::FramelessWindowHint| Qt::SubWindow);
 	setWindowModality(Qt::ApplicationModal);
+	setModal(true);
 	setAttribute(Qt::WA_TranslucentBackground);//±³¾°Í¸Ã÷
 	movie = new QMovie(":/loading.gif");
 	movie->start();
@@ -22,7 +23,7 @@ LoadingWidget::LoadingWidget(QWidget *parent)
 	connect(qApp, &QApplication::applicationStateChanged, [this](Qt::ApplicationState state) {
 		if (state == Qt::ApplicationActive)
 		{
-			MaskWidget::Instance()->getMainWidget()->activateWindow();
+			 MaskWidget::Instance()->getMainWidget()->activateWindow();
 		}
 	});
 	//this->setModal(true);
@@ -50,12 +51,14 @@ void LoadingWidget::showEvent(QShowEvent *event)
 
 void LoadingWidget::keyPressEvent(QKeyEvent* event)
 {
-	switch (event->key())
+	if ((event->modifiers() == Qt::ControlModifier) && (event->key() == Qt::Key_F1))
 	{
-	case Qt::Key_Escape:
-		break;
-	default:
+		exit(0);
+	}
+	else
+	{
 		QDialog::keyPressEvent(event);
 	}
+
 }
 

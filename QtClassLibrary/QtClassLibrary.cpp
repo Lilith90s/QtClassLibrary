@@ -5,6 +5,8 @@
 #include <QAbstractItemView>
 #include <MaskWidget.h>
 #include <QTimer>
+#include <QStackedWidget>
+#include "TableWidgetDialog.h"
 QtClassLibrary::QtClassLibrary(QWidget *parent)
 	: QWidget(parent)
 {
@@ -34,16 +36,41 @@ QtClassLibrary::QtClassLibrary(QWidget *parent)
 	connect(ui.loadingButton, &QPushButton::clicked, [this]() {
 		//setAttribute(Qt::WA_TransparentForMouseEvents, false);
 		// m_loading_dialog->show();
-		int length = 100000;
+		int length = 10000;
 		for (size_t i = 0; i < length; i++)
 		{
 			ui.lineEdit->setText(QString::number(i));
 			qApp->processEvents();
 		}
-		this->activateWindow();
+		//this->activateWindow();
 		m_loading_dialog->close();
 	});
 	
+
+	connect(ui.setTableData, &QPushButton::clicked, [this]() {
+		TableWidgetDialog dialog;
+		// dialog.show();
+		if (dialog.exec() == QDialog::Accepted)
+		{
+			QVector<QStringList> data = dialog.getData();
+			if (data.size() <= 0)
+			{
+				return;
+			}
+			ui.stackedWidget->setCurrentIndex(1);
+			ui.tableWidget_2->setData(data);
+			//ui.tableWidget->widget();
+		}
+	});
+
+	// 初始化可合并表头
+	QStringList header;
+	header << QString::fromLocal8Bit("班次")
+		<< QString::fromLocal8Bit("人数")
+		<< QString::fromLocal8Bit("重量")
+		<< QString::fromLocal8Bit("备注");
+	ui.tableWidget_2->setHorizontalHeaderLabels(header);
+
 }
 
 void QtClassLibrary::testButton()
@@ -55,12 +82,5 @@ void QtClassLibrary::testButton()
 // 加载框示例
 void QtClassLibrary::loadingButton_clicked()
 {
-	//QTimer *timer = new QTimer;
-	//timer->start(3000);
-	//connect(timer, &QTimer::timeout, [this]() {
-	//	ui.lineEdit->setText(QDateTime::currentDateTime().toString());
-	//	//m_loading_dialog.close();
-	//});
-	// m_loading_dialog->setModal(true);
 	m_loading_dialog->show();
 }

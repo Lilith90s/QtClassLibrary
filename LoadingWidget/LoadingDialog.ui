@@ -14,7 +14,7 @@
    <string>LoadingDialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgba(172, 172, 172, 190);</string>
+   <string notr="true">background-color: rgba(50, 50, 50, 50);</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="leftMargin">
@@ -32,7 +32,7 @@
    <item>
     <widget class="QLabel" name="label">
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(0, 0, 0,150);</string>
+      <string notr="true"/>
      </property>
      <property name="text">
       <string>GIFArea</string>

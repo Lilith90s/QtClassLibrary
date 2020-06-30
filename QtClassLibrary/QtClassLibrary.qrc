@@ -1,4 +1,6 @@
 <RCC>
-    <qresource prefix="QtClassLibrary">
+    <qresource prefix="/QtClassLibrary">
+        <file>qss/psblack.css</file>
+        <file>add.png</file>
     </qresource>
 </RCC>
