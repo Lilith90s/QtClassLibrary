@@ -63,6 +63,9 @@ QtClassLibrary::QtClassLibrary(QWidget *parent)
 		}
 	});
 
+	initWebScraping();
+	
+
 	// 初始化可合并表头
 	QStringList header;
 	header << QString::fromLocal8Bit("班次")
@@ -83,4 +86,27 @@ void QtClassLibrary::testButton()
 void QtClassLibrary::loadingButton_clicked()
 {
 	m_loading_dialog->show();
+}
+
+void QtClassLibrary::initWebScraping()
+{
+	connect(ui.searchSongButton, &QPushButton::clicked, [this]() {
+		ui.songListWidget->clear();
+		QString song_name = ui.songNameEdit->text();
+		WebScraping web_scraping;
+		m_song_infos = web_scraping.findSongs(song_name);
+		for (auto song_info : m_song_infos)
+		{
+			ui.songListWidget->addItem(song_info.name);
+		}
+
+	});
+	connect(ui.downloadButton, &QPushButton::clicked, [this]() {
+		QString song_name = ui.songNameEdit->text();
+		WebScraping web_scraping;
+		if (m_song_infos.size()!= 0)
+		{
+			web_scraping.downloadSong(m_song_infos[ui.songListWidget->currentRow()],QString("C:\\Users\\22579\\Documents\\tmp\\songs"));
+		}
+	});
 }

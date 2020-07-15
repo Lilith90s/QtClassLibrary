@@ -30,7 +30,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
-    <IncludePath>..\MergeTable;..\GanntView;..\LoadingWidget;..\LoadingWidget\x64\Debug\uic;..\HDateTimeLineEdit\x64\Debug\uic;..\HDateTimeLineEdit;..\HRetrievalCombox;..\HRetrievalCombox\x64\Debug\uic;$(IncludePath)</IncludePath>
+    <IncludePath>..\WebScraping;..\MergeTable;..\GanntView;..\LoadingWidget;..\LoadingWidget\x64\Debug\uic;..\HDateTimeLineEdit\x64\Debug\uic;..\HDateTimeLineEdit;..\HRetrievalCombox;..\HRetrievalCombox\x64\Debug\uic;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
@@ -74,7 +74,7 @@
       <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>..\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>HDateTimeLineEdit.lib;HRetrievalCombox.lib;LoadingWidget.lib;GanntView.lib;MergeTable.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>WebScraping.lib;HDateTimeLineEdit.lib;HRetrievalCombox.lib;LoadingWidget.lib;GanntView.lib;MergeTable.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
