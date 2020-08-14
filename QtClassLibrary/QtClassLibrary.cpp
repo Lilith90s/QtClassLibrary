@@ -7,6 +7,8 @@
 #include <QTimer>
 #include <QStackedWidget>
 #include "TableWidgetDialog.h"
+#include <qrect.h>
+
 QtClassLibrary::QtClassLibrary(QWidget *parent)
 	: QWidget(parent)
 {
@@ -14,6 +16,8 @@ QtClassLibrary::QtClassLibrary(QWidget *parent)
 	qDebug() << DateEditDialog::g_DateFormat;
 	ui.comboBox->init();
 	m_loading_dialog = new LoadingWidget;
+	m_loading = new Loading;
+	m_loading->setMaskWidget(this);
 	//m_loading_dialog->setModal(true);
 	
 	//m_loading_dialog.hide();
@@ -32,10 +36,14 @@ QtClassLibrary::QtClassLibrary(QWidget *parent)
 	//                                     font: 14px \"Arial\";");
 	// ui.comboBox->setCompleter(completer);
 	MaskWidget::Instance()->setMainWidget(this);
+
 	connect(ui.loadingButton, &QPushButton::clicked, this, &QtClassLibrary::loadingButton_clicked);
 	connect(ui.loadingButton, &QPushButton::clicked, [this]() {
-		//setAttribute(Qt::WA_TransparentForMouseEvents, false);
-		// m_loading_dialog->show();
+		QRect rect = this->geometry();
+		rect.adjust(-4, 0, 4, 0);
+		m_loading->showLoadingWidget();
+		setAttribute(Qt::WA_TransparentForMouseEvents, false);
+		 //m_loading_dialog->show();
 		int length = 10000;
 		for (size_t i = 0; i < length; i++)
 		{
@@ -43,7 +51,7 @@ QtClassLibrary::QtClassLibrary(QWidget *parent)
 			qApp->processEvents();
 		}
 		//this->activateWindow();
-		m_loading_dialog->close();
+		m_loading->closeLoadingWidget();
 	});
 	
 
@@ -85,7 +93,9 @@ void QtClassLibrary::testButton()
 // ¼ÓÔØ¿òÊ¾Àý
 void QtClassLibrary::loadingButton_clicked()
 {
-	m_loading_dialog->show();
+	//TestThread* thread = new TestThread(ui.lineEdit);
+	
+	// ui2.setupUi(this);
 }
 
 void QtClassLibrary::initWebScraping()
@@ -93,20 +103,31 @@ void QtClassLibrary::initWebScraping()
 	connect(ui.searchSongButton, &QPushButton::clicked, [this]() {
 		ui.songListWidget->clear();
 		QString song_name = ui.songNameEdit->text();
-		WebScraping web_scraping;
-		m_song_infos = web_scraping.findSongs(song_name);
+		ScrapingFactory s;
+		BaseScraping* web_scraping = s.createScraping(ScrapingFactory::ScrapingType::WangYiYun);
+		m_song_infos = web_scraping->findSongs(song_name);
 		for (auto song_info : m_song_infos)
 		{
 			ui.songListWidget->addItem(song_info.name);
+			qDebug() << song_info.name << ":" << song_info.athor << "------>" << song_info.hash;
 		}
-
+		delete web_scraping;
 	});
 	connect(ui.downloadButton, &QPushButton::clicked, [this]() {
 		QString song_name = ui.songNameEdit->text();
-		WebScraping web_scraping;
+		ScrapingFactory s;
+		BaseScraping* web_scraping = s.createScraping(ScrapingFactory::ScrapingType::WangYiYun);
 		if (m_song_infos.size()!= 0)
 		{
-			web_scraping.downloadSong(m_song_infos[ui.songListWidget->currentRow()],QString("C:\\Users\\22579\\Documents\\tmp\\songs"));
+			DownloadPath download_path;
+
+			download_path.image_path = QString("C:\\Users\\22579\\Documents\\tmp\\songs");
+			download_path.lyric_path = QString("C:\\Users\\22579\\Documents\\tmp\\songs");
+			download_path.music_path = QString("C:\\Users\\22579\\Documents\\tmp\\songs");
+
+			web_scraping->setMusicPath(download_path);
+			web_scraping->downloadSong(m_song_infos[ui.songListWidget->currentRow()]);
 		}
+		delete web_scraping;
 	});
 }

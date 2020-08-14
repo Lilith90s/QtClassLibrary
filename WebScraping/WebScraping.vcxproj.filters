@@ -23,12 +23,21 @@
     <ClInclude Include="webscraping_global.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClCompile Include="WebScraping.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+    <ClInclude Include="ScrapingFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="WebScraping.h">
+    <QtMoc Include="BaseScraping.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="KGScraping.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="WYYScraping.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="CaculatePowerThread.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
@@ -36,5 +45,22 @@
     <QtRcc Include="Resource.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BaseScraping.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="KGScraping.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WYYScraping.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ScrapingFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CaculatePowerThread.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

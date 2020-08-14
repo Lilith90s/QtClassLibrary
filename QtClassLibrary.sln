@@ -5,6 +5,7 @@ VisualStudioVersion = 15.0.28307.960
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QtClassLibrary", "QtClassLibrary\QtClassLibrary.vcxproj", "{B12702AD-ABFB-343A-A199-8E24837244A3}"
 	ProjectSection(ProjectDependencies) = postProject
+		{66F5EA3D-9D7E-4F55-8506-2033F0C9301B} = {66F5EA3D-9D7E-4F55-8506-2033F0C9301B}
 		{FE3DB549-7911-41E8-85D2-35020F4AA2E5} = {FE3DB549-7911-41E8-85D2-35020F4AA2E5}
 		{4223936C-0579-464C-BFF0-B86E04864559} = {4223936C-0579-464C-BFF0-B86E04864559}
 		{F6FD8980-4A57-4D6B-8375-DEAAD89F3D3A} = {F6FD8980-4A57-4D6B-8375-DEAAD89F3D3A}
@@ -23,6 +24,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MergeTable", "MergeTable\MergeTable.vcxproj", "{F6FD8980-4A57-4D6B-8375-DEAAD89F3D3A}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WebScraping", "WebScraping\WebScraping.vcxproj", "{F849A6DD-3390-4A86-946D-19799977E29B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SelectComboBox", "SelectComboBox\SelectComboBox.vcxproj", "{66F5EA3D-9D7E-4F55-8506-2033F0C9301B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -58,6 +61,10 @@ Global
 		{F849A6DD-3390-4A86-946D-19799977E29B}.Debug|x64.Build.0 = Debug|x64
 		{F849A6DD-3390-4A86-946D-19799977E29B}.Release|x64.ActiveCfg = Release|x64
 		{F849A6DD-3390-4A86-946D-19799977E29B}.Release|x64.Build.0 = Release|x64
+		{66F5EA3D-9D7E-4F55-8506-2033F0C9301B}.Debug|x64.ActiveCfg = Debug|x64
+		{66F5EA3D-9D7E-4F55-8506-2033F0C9301B}.Debug|x64.Build.0 = Debug|x64
+		{66F5EA3D-9D7E-4F55-8506-2033F0C9301B}.Release|x64.ActiveCfg = Release|x64
+		{66F5EA3D-9D7E-4F55-8506-2033F0C9301B}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

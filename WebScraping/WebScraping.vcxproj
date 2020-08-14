@@ -57,6 +57,13 @@ copy "*.h" ".\x64\Debug\output\include"
 copy "..\x64\Debug\$(AssemblyName)d.dll" ".\x64\Debug\output\bin"
 copy "..\x64\Debug\$(AssemblyName)d.lib" ".\x64\Debug\output\lib"</Command>
     </PostBuildEvent>
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Libraries\crypto\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>cryptlibd.lib;$(Qt_LIBS_);%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Libraries\crypto\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <PostBuildEvent>
@@ -67,7 +74,7 @@ copy "..\x64\Release\$(AssemblyName).lib" ".\x64\Release\output\lib"</Command>
   </ItemDefinitionGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
     <QtInstall>Qt5.9.1</QtInstall>
-    <QtModules>core;network</QtModules>
+    <QtModules>core;gui;network;widgets</QtModules>
     <QtBuildConfig>debug</QtBuildConfig>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
@@ -84,7 +91,7 @@ copy "..\x64\Release\$(AssemblyName).lib" ".\x64\Release\output\lib"</Command>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PreprocessorDefinitions>WEBSCRAPING_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -107,9 +114,17 @@ copy "..\x64\Release\$(AssemblyName).lib" ".\x64\Release\output\lib"</Command>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CaculatePowerThread.cpp" />
+    <ClCompile Include="ScrapingFactory.cpp" />
+    <ClCompile Include="WYYScraping.cpp" />
+    <QtMoc Include="CaculatePowerThread.h" />
+    <QtMoc Include="WYYScraping.h" />
+    <QtMoc Include="BaseScraping.h" />
+    <ClInclude Include="ScrapingFactory.h" />
     <ClInclude Include="webscraping_global.h" />
-    <QtMoc Include="WebScraping.h" />
-    <ClCompile Include="WebScraping.cpp" />
+    <QtMoc Include="KGScraping.h" />
+    <ClCompile Include="BaseScraping.cpp" />
+    <ClCompile Include="KGScraping.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="Resource.qrc" />

@@ -118,13 +118,16 @@ copy "..\x64\Release\$(AssemblyName).lib" ".\x64\Release\output\lib"</Command>
   <ItemGroup>
     <QtMoc Include="MaskWidget.h" />
     <QtMoc Include="LoadingWidget.h" />
+    <QtMoc Include="Loading.h" />
     <ClInclude Include="loadingwidget_global.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Loading.cpp" />
     <ClCompile Include="LoadingWidget.cpp" />
     <ClCompile Include="MaskWidget.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <QtUic Include="Loading.ui" />
     <QtUic Include="LoadingDialog.ui" />
   </ItemGroup>
   <ItemGroup>

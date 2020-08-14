@@ -36,6 +36,9 @@
     <ClCompile Include="LoadingWidget.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Loading.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="MaskWidget.h">
@@ -44,9 +47,15 @@
     <QtMoc Include="LoadingWidget.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="Loading.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="LoadingDialog.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="Loading.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
